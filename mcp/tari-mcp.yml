@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: grpc/tari-wallet.proto, grpc/tari-base_node.proto
+notes: >-
+  No official hosted or published Tari MCP server was found (no @modelcontextprotocol
+  package, no entry in public MCP registries, no mention in the docs as of 2026-07).
+  The tool list below is a CANDIDATE surface derived one-to-one from the Tari gRPC
+  operations, offered as a starting point for wrapping a self-hosted Tari node/wallet
+  as an MCP server. Not authoritative.
+server:
+  name: tari
+  transport: stdio
+tools:
+  - name: get_wallet_state
+    description: Return wallet balance, scanned height, and network connectivity.
+    source_operation: grpc/tari-wallet.proto#Wallet.GetState
+  - name: get_balance
+    description: Return the wallet's available and pending balances.
+    source_operation: grpc/tari-wallet.proto#Wallet.GetBalance
+  - name: get_address
+    description: Return the wallet's Tari address.
+    source_operation: grpc/tari-wallet.proto#Wallet.GetAddress
+  - name: transfer
+    description: Send Tari (XTM) to one or more recipients.
+    source_operation: grpc/tari-wallet.proto#Wallet.Transfer
+  - name: get_fee_estimate
+    description: Estimate the fee for a transaction.
+    source_operation: grpc/tari-wallet.proto#Wallet.GetFeeEstimate
+  - name: get_completed_transactions
+    description: List completed wallet transactions.
+    source_operation: grpc/tari-wallet.proto#Wallet.GetCompletedTransactions
+  - name: get_transaction_info
+    description: Look up the status of a specific transaction.
+    source_operation: grpc/tari-wallet.proto#Wallet.GetTransactionInfo
+  - name: get_payment_by_reference
+    description: Look up a payment by its PayRef (payment reference).
+    source_operation: grpc/tari-wallet.proto#Wallet.GetPaymentByReference
+  - name: get_tip_info
+    description: Return the base node's current chain tip.
+    source_operation: grpc/tari-base_node.proto#BaseNode.GetTipInfo
+  - name: get_blocks
+    description: Return blocks from the current best chain by height.
+    source_operation: grpc/tari-base_node.proto#BaseNode.GetBlocks
+  - name: get_constants
+    description: Return the network consensus constants.
+    source_operation: grpc/tari-base_node.proto#BaseNode.GetConstants
+  - name: search_payment_references
+    description: PayRef lookup for block explorers and external services.
+    source_operation: grpc/tari-base_node.proto#BaseNode.SearchPaymentReferences

@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tari-project
+notes: >-
+  Tari ships several first-party command-line applications written in Rust. The Ootle
+  (Layer-2) developer CLI (tari-cli) scaffolds and manages smart-contract templates;
+  the minotari_* binaries run and operate the base-layer node, wallet, miner, and
+  merge-mining proxy. Binaries are distributed via GitHub releases and crates.io.
+clis:
+  - name: tari-cli
+    repository: https://github.com/tari-project/tari-cli
+    language: rust
+    description: Tari Ootle template development CLI — scaffold, build and deploy smart-contract templates.
+    install: cargo install tari-cli
+  - name: minotari_node
+    repository: https://github.com/tari-project/tari
+    language: rust
+    description: The Tari base node daemon; exposes the BaseNode gRPC service.
+  - name: minotari_console_wallet
+    repository: https://github.com/tari-project/tari
+    language: rust
+    description: The Tari console wallet; exposes the Wallet gRPC service and an interactive TUI.
+  - name: minotari_miner
+    repository: https://github.com/tari-project/tari
+    language: rust
+    description: SHA3 CPU miner for the Tari base layer.
+  - name: minotari_merge_mining_proxy
+    repository: https://github.com/tari-project/tari
+    language: rust
+    description: Proxy enabling merge-mining Tari alongside Monero.

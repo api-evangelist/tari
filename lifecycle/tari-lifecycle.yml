@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tari-project/tari/releases
+versioning:
+  scheme: semver
+  current: v5.5.0
+  docs: https://github.com/tari-project/tari/releases
+  notes: >-
+    Core protocol is versioned with SemVer git tags (pre-release -pre/-rc suffixes).
+    The gRPC package (tari.rpc) is versioned with the node/wallet binary; the wallet
+    gRPC exposes GetVersion / CheckForUpdates operations for runtime compatibility checks.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal published deprecation policy or RFC 8594 Sunset/Deprecation header contract was found.
+sla:
+  url: null
+  notes: >-
+    Tari is a decentralized, self-hosted protocol (developers run their own base node
+    and wallet), so there is no hosted-service SLA or uptime commitment.
+status_page: null
+status_notes: >-
+  No dedicated status page was found. explore.tari.com is a block explorer (chain state),
+  not an operational status page.
+deprecated_operations: []

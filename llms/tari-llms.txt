@@ -1,0 +1,36 @@
+# Tari
+
+> Tari is an open-source, proof-of-work blockchain protocol focused on privacy (default confidential transactions) and accessibility. The Tari Universe app lets everyday users mine XTM tokens, and the protocol exposes self-hosted Base Node and Wallet gRPC interfaces for developers, exchanges, and dApp builders. A Layer-2 (Ootle) adds smart-contract templates.
+
+## APIs
+
+- [Base Node & Wallet gRPC](https://github.com/tari-project/tari/tree/development/applications/minotari_app_grpc/proto): proto3 (package tari.rpc) service definitions for querying/submitting to the chain and controlling a wallet.
+
+## Specs (harvested)
+
+- [Base Node service](grpc/tari-base_node.proto)
+- [Wallet service](grpc/tari-wallet.proto)
+- [Types](grpc/tari-types.proto)
+- [Transaction](grpc/tari-transaction.proto)
+- [Block](grpc/tari-block.proto)
+- [Network](grpc/tari-network.proto)
+- [P2Pool](grpc/tari-p2pool.proto)
+- [Sidechain types](grpc/tari-sidechain_types.proto)
+- [gRPC index](grpc/_index.yml)
+
+## SDKs & CLI
+
+- [@tari-project/tarijs](https://www.npmjs.com/package/@tari-project/tarijs): TypeScript toolkit for building on Tari.
+- [@tari-project/typescript-bindings](https://www.npmjs.com/package/@tari-project/typescript-bindings): TS types synced to the Ootle Rust codebase.
+- [@tari-project/wallet_jrpc_client](https://www.npmjs.com/package/@tari-project/wallet_jrpc_client): Wallet JSON-RPC client.
+- [tari-cli](https://github.com/tari-project/tari-cli): Ootle smart-contract template CLI.
+
+## Docs
+
+- [Website](https://tari.com)
+- [RFC / protocol specs](https://rfc.tari.com/)
+- [Tari Labs University](https://tlu.tarilabs.com/)
+- [Integration guide](https://tari.com/integration-guide)
+- [Block explorer](https://explore.tari.com/)
+- [GitHub organization](https://github.com/tari-project)
+- [Releases / changelog](https://github.com/tari-project/tari/releases)

@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tari-project/tari/releases
+scheme: semver
+current_version: v5.5.0
+notes: >-
+  Tari publishes dated, tagged releases on GitHub for the core protocol
+  (tari-project/tari). Tags follow SemVer with -pre/-rc pre-release suffixes.
+  Recent window captured below; the GitHub releases page is the source of truth.
+entries:
+  - version: v5.5.0
+    date: '2026-07-16'
+    breaking: false
+    highlights: Latest stable release of the Tari core protocol.
+  - version: v5.4.1
+    date: '2026-07-14'
+    breaking: false
+    highlights: Patch release on the 5.4 line.
+  - version: v5.4.0
+    date: '2026-07-02'
+    breaking: false
+    highlights: Minor release on the 5.x line (preceded by rc.1/rc.3).

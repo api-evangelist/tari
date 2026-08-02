@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: derived
+source: grpc/tari-base_node.proto, grpc/tari-wallet.proto
+transport:
+  protocol: gRPC
+  encoding: protobuf3
+  package: tari.rpc
+  hosting: >-
+    Self-hosted. A developer or exchange runs their own minotari_node (Base Node gRPC)
+    and minotari_console_wallet (Wallet gRPC); interfaces are local by default rather
+    than a hosted public endpoint.
+authentication:
+  style: none-by-default
+  notes: >-
+    The Base Node and Wallet gRPC servers assume a trusted local operator; access is
+    controlled by binding/host firewalling rather than API keys or OAuth. No documented
+    token/scope model.
+idempotency:
+  supported: false
+  notes: >-
+    No documented idempotency-key contract. Transaction submission is naturally guarded
+    by cryptographic uniqueness (kernels/commitments) at the protocol layer rather than
+    a client-supplied idempotency key. No Idempotency scoring pointer emitted.
+pagination:
+  style: offset-count
+  notes: >-
+    Several Base Node list operations (e.g. ListAssetRegistrations, GetBlocks) accept
+    offset/count or height-range parameters. Large results are returned via gRPC
+    server-streaming rather than page tokens.
+streaming:
+  supported: true
+  notes: >-
+    Many operations use gRPC server-streaming (e.g. ListHeaders, GetBlocks,
+    GetNetworkDifficulty) and Wallet.StreamTransactionEvents streams live transaction
+    events. This is a native gRPC stream, not an HTTP webhook or AsyncAPI channel.
+versioning:
+  scheme: semver
+  runtime_check: Wallet.GetVersion / BaseNode.GetVersion; CheckForUpdates for update discovery.
+errors:
+  envelope: grpc-status
+  notes: Errors surface as standard gRPC status codes with a message; there is no RFC 9457 problem+json envelope.
+rate_limiting:
+  documented: false
+cross_links:
+  changelog: changelog/tari-changelog.yml
+  lifecycle: lifecycle/tari-lifecycle.yml
+  grpc: grpc/_index.yml

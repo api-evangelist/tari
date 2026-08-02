@@ -1,8 +1,19 @@
 aid: tari
 name: Tari
-description: Tari is a company surfaced as a portfolio company of canaan-partners, multicoin-capital,
-  pantera-capital, trinity-ventures and added to the API Evangelist network as a stub for enrichment.
-  This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Tari is an open-source, proof-of-work blockchain protocol designed to be private by
+  default (confidential transactions) and accessible to everyday users. Its Tari Universe
+  application lets people mine XTM tokens by contributing compute, and the protocol has
+  grown to hundreds of thousands of active miners. For developers, exchanges, and dApp
+  builders, Tari exposes self-hosted Base Node and Wallet interfaces over gRPC (proto3,
+  package tari.rpc): the Base Node service queries headers, blocks, mempool, network
+  constants, block templates for miners, and PayRef payment-reference lookups, while the
+  Wallet service handles balances, transfers, fee estimation, one-sided and atomic-swap
+  transactions, transaction history, and a live transaction-event stream. A Layer-2
+  (Ootle) adds smart-contract templates via the tari-cli. Official TypeScript SDKs
+  (tari.js, typescript-bindings, wallet JSON-RPC client) and Rust crates support
+  integration. Tari is backed by Canaan Partners, Multicoin Capital, Pantera Capital,
+  and Trinity Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/tari/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,12 +24,64 @@ x-backed-by:
 - trinity-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://tari.com/favicon.ico
 tags:
 - Company
-apis: []
+- Blockchain
+- Cryptocurrency
+- Protocol
+- gRPC
+- Wallet
+- Mining
+- Privacy
+- Web3
+apis:
+- name: Tari Base Node & Wallet gRPC
+  description: >-
+    Self-hosted gRPC interfaces (proto3, package tari.rpc) to a Tari base node and wallet,
+    for querying the chain and controlling a wallet. Servers run locally on the operator's
+    node rather than at a single hosted public endpoint.
+  humanURL: https://tari.com/integration-guide
+  baseURL: https://rfc.tari.com/
+  properties:
+  - type: Protobuf
+    name: Base Node service
+    url: grpc/tari-base_node.proto
+  - type: Protobuf
+    name: Wallet service
+    url: grpc/tari-wallet.proto
+  - type: Protobuf
+    name: Types
+    url: grpc/tari-types.proto
+  - type: Protobuf
+    name: Transaction
+    url: grpc/tari-transaction.proto
+  - type: Protobuf
+    name: Block
+    url: grpc/tari-block.proto
+  - type: Protobuf
+    name: Network
+    url: grpc/tari-network.proto
+  - type: Protobuf
+    name: P2Pool
+    url: grpc/tari-p2pool.proto
+  - type: Protobuf
+    name: Sidechain types
+    url: grpc/tari-sidechain_types.proto
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -27,3 +90,43 @@ maintainers:
 common:
 - type: Website
   url: https://tari.com
+- type: DeveloperPortal
+  url: https://rfc.tari.com/
+- type: Documentation
+  url: https://rfc.tari.com/
+- type: GettingStarted
+  url: https://tari.com/integration-guide
+- type: GitHubOrganization
+  url: https://github.com/tari-project
+- type: Blog
+  url: https://tari.com/updates
+- type: ChangeLog
+  url: https://github.com/tari-project/tari/releases
+- type: Protobuf
+  name: gRPC service index
+  url: grpc/_index.yml
+- type: Packages
+  url: packages/tari-packages.yml
+- type: SDKs
+  url: packages/tari-packages.yml
+- type: CLI
+  url: cli/tari-cli.yml
+- type: MCPServer
+  url: mcp/tari-mcp.yml
+- type: LLMsTxt
+  url: llms/tari-llms.txt
+- type: Conformance
+  url: conformance/tari-conformance.yml
+- type: Conventions
+  url: conventions/tari-conventions.yml
+- type: Lifecycle
+  url: lifecycle/tari-lifecycle.yml
+- type: DomainSecurity
+  url: security/tari-domain-security.yml
+- type: WellKnown
+  url: well-known/tari-well-known.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

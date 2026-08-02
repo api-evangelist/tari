@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: grpc/tari-base_node.proto, grpc/tari-wallet.proto
+standards:
+  - id: grpc
+    conforms: true
+    evidence: Base Node and Wallet interfaces are defined as gRPC services (proto3, package tari.rpc).
+  - id: protobuf3
+    conforms: true
+    evidence: All service/message definitions use proto3 syntax.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth2 surface; gRPC servers are self-hosted and trust the local operator.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are gRPC status codes, not RFC 9457 problem+json (no REST/HTTP API).
+  - id: rest-openapi
+    conforms: false
+    evidence: Tari exposes gRPC, not a REST/OpenAPI HTTP API.
+notes: >-
+  Derived from the harvested protobuf definitions. Tari is a proof-of-work,
+  privacy-oriented blockchain protocol; conformance here asserts the transport/spec
+  standards its interfaces use. No published third-party security/compliance
+  certification program (SOC 2 / ISO 27001 / PCI / HIPAA / FedRAMP) was found, so no
+  Compliance pointer is emitted.

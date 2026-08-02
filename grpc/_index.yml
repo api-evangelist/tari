@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tari-project/tari/tree/development/applications/minotari_app_grpc/proto
+description: >-
+  Tari exposes its node and wallet functionality over gRPC (proto3, package tari.rpc).
+  These are the canonical protobuf service definitions harvested verbatim from the
+  minotari_app_grpc application in the tari-project/tari repository. The Base Node and
+  Wallet gRPC servers are self-hosted (a developer/exchange runs their own node), so
+  there is no single public REST/OpenAPI base URL — the proto files are the interface
+  contract.
+services:
+  - name: BaseNode
+    file: tari-base_node.proto
+    package: tari.rpc
+    summary: >-
+      Read-and-submit interface to a Tari base node — list/query headers and blocks,
+      network constants and difficulty, mempool, block templates for miners, submit
+      blocks and transactions, sync/tip info, validator-node queries, and PayRef
+      (payment reference) lookups for explorers.
+    method_count: 42
+  - name: Wallet
+    file: tari-wallet.proto
+    package: tari.rpc
+    summary: >-
+      Full wallet control interface — balance/state/connectivity, Transfer, fee
+      estimation, one-sided and atomic-swap transactions, coin split/join, burn and
+      HTLC claims, transaction history and PayRef lookups, message signing, UTXO
+      import/validation, validator-node registration, and a StreamTransactionEvents
+      server-stream.
+    method_count: 51
+supporting_messages:
+  - tari-types.proto
+  - tari-transaction.proto
+  - tari-block.proto
+  - tari-network.proto
+  - tari-sidechain_types.proto
+  - tari-p2pool.proto
+license: BSD-3-Clause
